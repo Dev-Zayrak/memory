@@ -1,0 +1,12 @@
+#principale{
+    padding: 0 2vw;
+    line-height: 1.9vw;
+    font-family: sans-serif;
+    background: #B0DBF1;
+    margin:0 20vw;
+    border-radius: 1%;
+}
+#img{
+    display: flex;
+    justify-content: center;
+}
