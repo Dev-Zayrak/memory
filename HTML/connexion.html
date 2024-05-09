@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/connexion.css">
+    <title>Memory - connection</title>
+</head>
+<body>
+    <h1>Eni - <strong> Memory </strong>- Se Connecter</h1>
+    
+    <nav>
+        <a href="../index.html">Accueil</a>
+        <a href="inscription.html">S'inscrire</a>
+        <a href="connexion.html">Se connecter</a>
+        <!-- <a href="profil.html">Profil</a> -->
+        <!-- <a href="jouer.html">Jouer</a> -->
+    </nav>
+    <div id="formulaire">
+        <fieldset>
+            <form id="connexionForm">
+                <ul>
+                <legend id="legend">Connectez-vous</legend>
+                <br>
+                    <li>
+                    <label for="name">Nom d'utilisateur</label><br>
+                    <input type="text" name="name" id="name" class="input" placeholder="Saisir votre pseudo" required>
+                    </li>
+                    <div class="message-error" id="error-name"></div>
+                    <hr>
+                    <li>
+                    <label for="pwd">Mot de passe</label><br>
+                    <input type="password" name="pwd" id="pwd" class="input" required
+                        placeholder="Saisir votre mot de passe" >
+                    </li>
+                    <div class="message-error" id="error-pwd"></div>
+                    <div id="pwd-power"></div>
+                    <hr>
+                </ul>
+                <br>
+                <div id="success-msg"></div>
+                <div id="button">
+                    <button class="bttA" type="reset">Annuler</button>
+                    <button class="btt" type="submit">Connexion</button>
+                </div>                
+            </form>
+        </fieldset>
+    </div>
+    <script type="module" src="../JS/connexion.js"></script>
+</body>
+</html>
