@@ -1,6 +1,7 @@
 body {
     background: linear-gradient(to bottom right, #253DA1, #000137);
     min-height: 100vh;
+    min-width: 100vw;
     margin: 0;
 }
 h1{
@@ -38,7 +39,7 @@ nav a:hover{
     }
 
     nav a {
-        height: 4vh;
+        height: 5vh;
         font-size: 2vh;
     }
 } 
