@@ -28,3 +28,35 @@ nav a {
 nav a:hover{
     background-color: purple;
 }
+
+/* Portable portrait*/
+
+@media (max-width: 576px){
+
+    h1{
+        font-size: 5vh;
+    }
+
+    nav a {
+        height: 4vh;
+        font-size: 2vh;
+    }
+} 
+
+/* Tablette */
+@media (min-width: 577px) and (max-width: 1024px){
+
+    h1{
+        font-size: 7vh;
+    }
+
+    nav{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 4vh;
+    }
+    nav a {
+        height:6vh;
+        font-size: 4vh;
+    }
+}
