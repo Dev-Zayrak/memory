@@ -1,7 +1,7 @@
 body {
     background: linear-gradient(to bottom right, #253DA1, #000137);
     margin: 0;
-
+    height: 100vh;
 }
 h1{
     text-align: center; 
@@ -53,16 +53,17 @@ nav a:hover{
 @media (min-width: 577px) and (max-width: 1024px){
 
     h1{
-        font-size: 7vh;
+        font-size: 8vw;
+        margin-bottom: 1vh;
     }
 
     nav{
         display: flex;
         justify-content: center;
-        margin-bottom: 4vh;
+        margin-bottom: 1vh;
     }
     nav a {
-        height:6vh;
-        font-size: 4vh;
+        height:5vh;
+        font-size: 5vw;
     }
 }
