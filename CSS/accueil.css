@@ -1,10 +1,7 @@
-/* portable */
-
 #principale{
     padding: 1vh 3vw;
     line-height: 4vh;
     font-family: sans-serif;
-    /* font-size: 1em; */
     background: #B0DBF1;
     margin:4vh 4vw;
     border-radius: 2%;
@@ -22,5 +19,12 @@
 @media (min-width: 577px) and (max-width: 1024px){
     #principale{
         font-size: 1.5em;
+    }
+}
+
+@media (min-width: 1025px){
+    #principale{
+        margin: 4vh 25vw;
+        line-height: 3vh;
     }
 }
