@@ -13,15 +13,12 @@ h1{
 nav{
     display: flex;
     justify-content: center;
-    margin-bottom: 2vh;
-    
 }
 nav a {
     text-decoration: none;
     color: #ffffff;
     background: #000000;
-    height: 5vh;
-    line-height: 5vh;
+    line-height: 7vh;
     padding: 0 2vw;
     font-family: sans-serif;
     font-size: 1.5vw;
@@ -46,6 +43,7 @@ nav a:hover{
     nav a {
         height: 5vh;
         font-size: 5.5vw;
+        line-height: 5vh;
     }
 } 
 
@@ -60,10 +58,11 @@ nav a:hover{
     nav{
         display: flex;
         justify-content: center;
-        margin-bottom: 1vh;
+        align-items: center;
     }
+
     nav a {
-        height:5vh;
-        font-size: 2.5em;
+        font-size:2em;
+        line-height: 2em;
     }
 }
