@@ -106,15 +106,10 @@
 /* Portable */
 @media (max-width: 576px){
 
-    html, body {
-        min-height: 100%;
-    }
-
     .terrain{
         grid-template-columns: repeat(4, 1fr);
         padding: 0vh 1vw;
-        margin: 0 1vw 3vh 1vw;
-        perspective: 1000px;
+        margin: 0 2vw 3vh 2vw;
     }
 
     #count{
@@ -128,21 +123,8 @@
 
     .terrain{
         grid-template-columns: repeat(4, 1fr);
-    }
-
-    .front-face, 
-    .back-face{
-        max-width: 170px;
-        max-height: 170px;
-    }
-
-    .card{
-        max-width: 170px;
-        max-height: 170px;
-    }
-
-    #count{
-        font-size: 30px;
-        margin-bottom: 20px;
+        gap: 1vh;
+        padding: 0vh 0vw;
+        margin: 0 7.5vw 1vh 7.5vw;
     }
 }
