@@ -1,12 +1,16 @@
+/* portable */
+
 #principale{
-    padding: 0 2vw;
-    line-height: 1.9vw;
+    padding: 1vh 3vw;
+    line-height: 4vh;
     font-family: sans-serif;
     background: #B0DBF1;
-    margin:0 20vw;
-    border-radius: 1%;
+    margin:4vh 4vw;
+    border-radius: 2%;
 }
 #img{
-    display: flex;
+    max-width: 100%;
+    height: auto;
+    display: block;
     justify-content: center;
 }
