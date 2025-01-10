@@ -113,7 +113,7 @@
     }
 
     #count{
-        margin-bottom: 3vh;
+        margin: 1vh 0vw;
         font-size: 5vw;
     }
 }
@@ -127,4 +127,6 @@
         padding: 0vh 0vw;
         margin: 0 7.5vw 1vh 7.5vw;
     }
+
+
 }
