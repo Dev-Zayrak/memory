@@ -80,3 +80,25 @@ input:focus{
     justify-content: center;
     font-size: 2.5vw;
 }
+
+@media (max-width: 576px){
+    fieldset{
+        margin: 2vh 5vw;
+    }
+    #legend{
+        margin-top: 3vh;
+    }
+    input{
+        margin-top: 2vh;
+    }
+    li{
+        margin-top: 3vh;
+    }
+    .message-error{
+        margin: 2vh 0;
+        line-height: 1;
+    }
+    #button{
+        margin: 3vh 0;
+    }
+}
