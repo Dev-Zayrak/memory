@@ -1,21 +1,23 @@
 fieldset{
     padding: 0 5vw;
-    line-height: 2.5vw;
+    line-height: 2.5w;
     font-family: sans-serif;
     background-color: rgb(1, 53, 53);
-    margin:2vh 20vw;
+    margin: 2vh 5vw;
     border-radius: 2%;
     border: none;
 }
 li {
     color: white;
     list-style-type: none;
+    margin-top: 3vh;
 }
 input{
     border: none;
     background-color: rgb(1, 53, 53);
     color: white;
-    width: 44vw;
+    width: 65vw;
+    margin-top: 2vh;
 }
 input::placeholder{
     color: white;
@@ -30,11 +32,12 @@ input:focus{
     font-size: 2.5vh;
     color: white;
     font-weight: bold;
+    margin-top: 3vh;
 }
 #button{
     display: flex;
     justify-content: space-around;
-    margin: 0 5vw; 
+    margin: 3vh 0;
 }
 .btt, .bttA{
     appearance: none;
@@ -62,9 +65,12 @@ input:focus{
 }
 .message-error{
     color: red;
+    margin: 2vh 0;
+    line-height: 1;
 }
 #pwd-power{
     color: pink;
+    margin-bottom: 2vh;
 }
 #success-msg{
     display: flex;
@@ -72,4 +78,20 @@ input:focus{
     font-weight: bold;
     justify-content: center;
     font-size: 2.5vw;
+}
+
+@media (min-width: 1025px){
+    fieldset{
+        margin:2vh 20vw;
+    }
+    input{
+        width: 44vw;
+        margin-top: 0;
+    }
+    li{
+        margin-top: 0;
+    }
+    #button{
+        margin: 0 5vw; 
+    }
 }
