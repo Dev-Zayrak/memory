@@ -102,3 +102,26 @@ input:focus{
         margin: 3vh 0;
     }
 }
+
+@media (min-width: 577px) and (max-width: 1024px){
+    fieldset{
+        margin: 6vh 5vw;
+    }
+    #legend{
+        margin-top: 3vh;
+    }
+    input{
+        margin-top: 2vh;
+        font-size: 1rem;
+    }
+    li{
+        margin-top: 2vh;
+        font-size: 1.5rem;
+    }
+    .message-error{
+        margin: 2vh 0;
+    }
+    #button{
+        margin: 3vh 0;
+    }
+}
