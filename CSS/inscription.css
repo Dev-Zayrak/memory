@@ -3,19 +3,21 @@ fieldset{
     line-height: 2.5vw;
     font-family: sans-serif;
     background-color: rgb(1, 53, 53);
-    margin:2vh 20vw;
+    margin: 2vh 5vw;
     border-radius: 2%;
     border: none;
 }
 li {
     color: white;
     list-style-type: none;
+    margin-top: 3vh;
 }
 input{
     border: none;
     background-color: rgb(1, 53, 53);
     color: white;
-    width: 44vw;
+    width: 65vw;
+    margin-top: 2vh;
 }
 input::placeholder{
     color: white;
@@ -30,11 +32,12 @@ input:focus{
     font-size: 2.5vh;
     color: white;
     font-weight: bold;
+    margin-top: 3vh;
 }
 #button{
     display: flex;
     justify-content: space-around;
-    margin: 0 5vw; 
+    margin: 3vh 0;
 }
 .btt, .bttA{
     appearance: none;
@@ -45,13 +48,13 @@ input:focus{
     font-weight: bold;
     color: black;
     padding: 0.5vh 1vw;
-    margin-bottom: 1vh;   
+    margin-bottom: 1vh;
 }
 .btt{
     border: 3px solid green;
 }
 .btt:hover{
-    background: green;    
+    background: green;
 }
 .bttA{
     border: 3px solid red;
@@ -62,9 +65,12 @@ input:focus{
 }
 .message-error{
     color: red;
+    margin: 2vh 0;
+    line-height: 1;
 }
 #pwd-power{
     color: pink;
+    margin-bottom: 2vh;
 }
 #success-msg{
     display: flex;
@@ -81,31 +87,6 @@ input:focus{
     font-size: 2.5vw;
 }
 
-@media (max-width: 576px){
-    fieldset{
-        margin: 2vh 5vw;
-    }
-    #legend{
-        margin-top: 3vh;
-    }
-    input{
-        margin-top: 2vh;
-        width: 65vw;
-    }
-    li{
-        margin-top: 3vh;
-    }
-    .message-error{
-        margin: 2vh 0;
-        line-height: 1;
-    }
-    #pwd-power{
-        margin-bottom: 2vh;
-    }
-    #button{
-        margin: 3vh 0;
-    }
-}
 
 @media (min-width: 577px) and (max-width: 1024px){
     fieldset{
@@ -115,7 +96,6 @@ input:focus{
         margin: 3vh 0 4vh 0;
     }
     input{
-        margin-top: 2vh;
         font-size: 1rem;
         width: 72vw;
     }
@@ -123,13 +103,23 @@ input:focus{
         margin-top: 2vh;
         font-size: 1.5rem;
     }
-    .message-error{
-        margin: 2vh 0;
+}
+
+@media (min-width: 1025px){
+    fieldset{
+        margin:2vh 20vw;
+    }
+    input{
+        margin-top: 2vh;
+        width: 44vw;
+    }
+    li{
+        margin-top: 0vh;
     }
     #pwd-power{
-        margin-bottom: 2vh;
+        margin-bottom: 0vh;
     }
     #button{
-        margin: 3vh 0;
+        margin: 3vh 5vw 2vh 5vw;
     }
 }
