@@ -1,9 +1,9 @@
 #info{
-    padding: 1vh 8vw 1vh 0;
-    line-height: 10vw;
+    padding: 0.5vh 8vw 0 0;
+    line-height: 5vh;
     font-family: sans-serif;
     background-color: rgb(89, 128, 236);
-    margin:4vh 10vw 5vh 10vw;
+    margin:2vh 10vw 2vh 10vw;
     border-radius: 2%;
     border: none;
 }
