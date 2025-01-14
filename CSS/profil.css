@@ -31,8 +31,8 @@ li {
 @media (min-width: 1025px){
     #info{
         margin:2vh 25vw;
-        padding: 0 1vw;
-        line-height: 2.5vw;
+        padding: 0.5vh 1vw;
+        line-height: 2.25vw;
     }
     #scoreboard{
         font-size: 4vh;
