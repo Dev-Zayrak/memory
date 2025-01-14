@@ -1,9 +1,9 @@
 #info{
-    padding: 0 1vw;
-    line-height: 2.5vw;
+    padding: 1vh 8vw 1vh 0;
+    line-height: 10vw;
     font-family: sans-serif;
     background-color: rgb(89, 128, 236);
-    margin:2vh 25vw;
+    margin:4vh 10vw 5vh 10vw;
     border-radius: 2%;
     border: none;
 }
@@ -16,13 +16,25 @@ li {
 #scoreboard{
     color: red;
     font-weight: bold;
-    font-size: 4vh;
+    font-size: 1.5rem;
     display: flex;
     justify-content: center;
+    white-space: nowrap;
 }
 
 .score{
     display: flex;
     justify-content: center;
     font-size: 2vh;
+}
+
+@media (min-width: 1025px){
+    #info{
+        margin:2vh 25vw;
+        padding: 0 1vw;
+        line-height: 2.5vw;
+    }
+    #scoreboard{
+        font-size: 4vh;
+    }
 }
