@@ -20,11 +20,8 @@ $validation.addEventListener("submit", (event) =>{
         switch(input.id){
             case "name": 
             userName = input.value
-            
-            console.log(userName);
             break
             case "pwd": userPwd = input.value
-            console.log(userPwd);
         }
     });
     //boucle et message NAME + recuperation vraie mdp si nom existe
