@@ -5,7 +5,6 @@ const convertData = JSON.parse(datasLocalstorage)
 // NAME
 let $name = document.getElementById("name")
 let $errorName = document.getElementById("error-name")
-let $errorName2 = document.getElementById("error-name2")
 const regexName = /(^[0-9a-zA-Z-]+$)/
 let availableName
 let regexNameBoolean
@@ -29,8 +28,6 @@ $name.addEventListener("input",function nameCheck() {
         $errorName.textContent=""
         regexNameBoolean = true
     }
-
-    console.log(availableName);
 })
 
 // MAIL
@@ -155,7 +152,7 @@ $inscriptionForm.addEventListener("submit", (event) =>{
     }
 })
 
-//FUNCTION
+
 function saveUser(key, user) {
     // Get old users
     const users = getUsers(key)
