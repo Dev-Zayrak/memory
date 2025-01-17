@@ -126,11 +126,7 @@ $inscriptionForm.addEventListener("submit", (event) =>{
                 break
                 case "pwd": 
                 user.pwd = input.value
-                user.score1 = 1001
-                user.score2 = 1002
-                user.score3 = 1003
-                user.score4 = 1004
-                user.score5 = 1005
+                user.scores = []
             }
         })
         saveUser(Key_LocalStorage, user)

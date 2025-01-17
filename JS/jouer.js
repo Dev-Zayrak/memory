@@ -59,50 +59,61 @@ function scoreboard() {
     const dataUsersFromLS = localStorage.getItem("users")
     const convertUsers = JSON.parse(dataUsersFromLS)
 
-    for (const key in convertUsers) {
-        if(convertJoueur.name ===  convertUsers[key].name) {
-
-            
-            if(move < convertUsers[key].score5){
-
-                //si tu bas score5
-                if(move < convertUsers[key].score5 && move > convertUsers[key].score4){
-                    convertUsers[key].score5 = move
-                }
-
-                //si tu bas score4
-                if(move < convertUsers[key].score4 && move > convertUsers[key].score3){
-                    convertUsers[key].score5 = convertUsers[key].score4
-                    convertUsers[key].score4 = move
-                }
-
-                //si tu bas score3
-                if(move < convertUsers[key].score3 && move > convertUsers[key].score2){
-                    convertUsers[key].score5 = convertUsers[key].score4
-                    convertUsers[key].score4 = convertUsers[key].score3
-                    convertUsers[key].score3 = move
-                }
-
-                //si tu bas score2
-                if(move < convertUsers[key].score2 && move > convertUsers[key].score1){
-                    convertUsers[key].score5 = convertUsers[key].score4
-                    convertUsers[key].score4 = convertUsers[key].score3
-                    convertUsers[key].score3 = convertUsers[key].score2
-                    convertUsers[key].score2 = move
-                }
-
-                //si tu bas score1
-                if(move < convertUsers[key].score1){
-                    convertUsers[key].score5 = convertUsers[key].score4
-                    convertUsers[key].score4 = convertUsers[key].score3
-                    convertUsers[key].score3 = convertUsers[key].score2
-                    convertUsers[key].score2 = convertUsers[key].score1
-                    convertUsers[key].score1 = move
-                }
-                localStorage.setItem("users", JSON.stringify(convertUsers))
+    for(const key in convertUsers){
+        if(convertJoueur.name ===  convertUsers[key].name){
+            convertUsers[key].scores.push(move)
+            convertUsers[key].scores.sort()
+            if(convertUsers[key].scores.length > 5){
+                convertUsers[key].scores.pop()
             }
+            localStorage.setItem("users", JSON.stringify(convertUsers))
         }
     }
+
+    // for (const key in convertUsers) {
+    //     if(convertJoueur.name ===  convertUsers[key].name) {
+
+            
+    //         if(move < convertUsers[key].score5){
+
+    //             //si tu bas score5
+    //             if(move < convertUsers[key].score5 && move > convertUsers[key].score4){
+    //                 convertUsers[key].score5 = move
+    //             }
+
+    //             //si tu bas score4
+    //             if(move < convertUsers[key].score4 && move > convertUsers[key].score3){
+    //                 convertUsers[key].score5 = convertUsers[key].score4
+    //                 convertUsers[key].score4 = move
+    //             }
+
+    //             //si tu bas score3
+    //             if(move < convertUsers[key].score3 && move > convertUsers[key].score2){
+    //                 convertUsers[key].score5 = convertUsers[key].score4
+    //                 convertUsers[key].score4 = convertUsers[key].score3
+    //                 convertUsers[key].score3 = move
+    //             }
+
+    //             //si tu bas score2
+    //             if(move < convertUsers[key].score2 && move > convertUsers[key].score1){
+    //                 convertUsers[key].score5 = convertUsers[key].score4
+    //                 convertUsers[key].score4 = convertUsers[key].score3
+    //                 convertUsers[key].score3 = convertUsers[key].score2
+    //                 convertUsers[key].score2 = move
+    //             }
+
+    //             //si tu bas score1
+    //             if(move < convertUsers[key].score1){
+    //                 convertUsers[key].score5 = convertUsers[key].score4
+    //                 convertUsers[key].score4 = convertUsers[key].score3
+    //                 convertUsers[key].score3 = convertUsers[key].score2
+    //                 convertUsers[key].score2 = convertUsers[key].score1
+    //                 convertUsers[key].score1 = move
+    //             }
+    //             localStorage.setItem("users", JSON.stringify(convertUsers))
+    //         }
+    //     }
+    // }
 }
 
 function flipcard(){

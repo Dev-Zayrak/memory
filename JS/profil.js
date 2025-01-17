@@ -7,18 +7,10 @@ const dataUsersFromLS = localStorage.getItem("users")
 const convertUsers = JSON.parse(dataUsersFromLS)
 
 //boucle pour recup les scores
-let score1
-let score2
-let score3
-let score4
-let score5
+let scores=[]
 for(const key in convertUsers){
     if(convertJoueur.name ===  convertUsers[key].name){
-        score1 = convertUsers[key].score1
-        score2 = convertUsers[key].score2
-        score3 = convertUsers[key].score3
-        score4 = convertUsers[key].score4
-        score5 = convertUsers[key].score5
+        scores = convertUsers[key].scores
     }
 }
 
@@ -29,25 +21,22 @@ const $mailProfil = document.getElementById("mailProfil")
 $mailProfil.textContent= "Email : "+convertJoueur.mail
 
 // affichage si aucun score enregistrer
-const $noscore = document.getElementById("score0")
-if (score1 == 1001) $noscore.textContent = "Aucun score enregistrer."
+const $noScore = document.getElementById("score1")
+if (scores.length == 0) $noScore.textContent = "Aucun score enregistrer."
 
 else{
-// affichage top score
-const $score1 = document.getElementById("score1")
-const $score2 = document.getElementById("score2")
-const $score3 = document.getElementById("score3")
-const $score4 = document.getElementById("score4")
-const $score5 = document.getElementById("score5")
+    // affichage top score
+    const $scores = []
+    for(let i=1; i<6; i++){
+        $scores.push(document.getElementById("score"+i))
+    }
 
-    $score1.textContent = "Score 1 : "+ score1 + " coups"
-
-    if(score2 < 1000) $score2.textContent = "Score 2 : " + score2 + " coups"
-    if(score3 < 1000) $score3.textContent = "Score 3 : " + score3 + " coups"
-    if(score4 < 1000) $score4.textContent = "Score 4 : " + score4 + " coups"
-    if(score5 < 1000) $score5.textContent = "Score 5 : " + score5 + " coups"
+    let y = 1;
+    for(let i=0; i<scores.length; i++){
+        $scores[i].textContent = "Score " + y + " : " + scores[i] + " coups"
+        y++
+    }
 }
-
 
 // top 5
 
