@@ -16,6 +16,7 @@ let move =0
 
 //afficher le compteur
 let $count = document.getElementById("count")
+
 function firstMove() {
     $count.textContent="Nombre de coups : "+move
 }
@@ -52,18 +53,16 @@ function victory() {
 }
 
 function scoreboard() {
-       // recuperer les données joueur du ls
     const dataJoueurFromLS = localStorage.getItem("joueur")
     const convertJoueur= JSON.parse(dataJoueurFromLS)
 
-    // recuperer les données USERS du ls
     const dataUsersFromLS = localStorage.getItem("users")
     const convertUsers = JSON.parse(dataUsersFromLS)
-    // boucle pour récupérer USERS
+
     for (const key in convertUsers) {
         if(convertJoueur.name ===  convertUsers[key].name) {
 
-            //ajouter les nouvelles données si amelioration du score
+            
             if(move < convertUsers[key].score5){
 
                 //si tu bas score5
@@ -106,23 +105,20 @@ function scoreboard() {
     }
 }
 
-
-//change le nom de la classe quand on clique sur la carte
 function flipcard(){
-    if (lockTerrain) return;  //le return arrete la fonction
-    if(this === firstC) return; //empeche de cliquer deux fois sur la meme carte
-    this.classList.toggle("flip") //rajoute "flip" dans le nom de la classe
-    if (!hasFlippedCard) { //si il n'y a pas de carte retourné lorsque le joueur clique sur une carte
+    if (lockTerrain) return;
+    if(this === firstC) return;
+    this.classList.toggle("flip")
+    if (!hasFlippedCard) {
         hasFlippedCard=true
         firstC=this
-    } else { // si il y a une carte retournée
+    } else {
         hasFlippedCard=false
         secondC=this
         checkForMatch()
     }
 }
 
-//si deux cartes sont identiques
 function lockC() {
     firstC.removeEventListener("click", flipcard)
     secondC.removeEventListener("click", flipcard)
@@ -131,24 +127,21 @@ function lockC() {
     if(counter===10) victory()
 }
 
-//si deux cartes sont différentes
 function hideC() {
     lockTerrain = true;
     setTimeout(() => {
         firstC.classList.remove("flip")
         secondC.classList.remove("flip")
         resetTerrain()
-    }, 500);
+    }, 1000);
 }
 
-// controle si les deux cartes sont identiques
 function checkForMatch (){
-    if (firstC.dataset.nom == secondC.dataset.nom) lockC()  //si les deux cartes match on les verrouilles
-    else hideC()  // si les deux cartes sont différentes ont les retournent automatiquement
+    if (firstC.dataset.nom == secondC.dataset.nom) lockC()
+    else hideC()
 }
 
-//reset les cartes pour ne pas verrouiller la premiere carte cliquer
-function resetTerrain() { 
+function resetTerrain() {
     move++;
     firstMove()
     hasFlippedCard = false
@@ -157,8 +150,6 @@ function resetTerrain() {
     secondC = null
 }
 
-//Quand on mets une fonction entre parenthèses elle est immédiatement invoqué
-//Cela s'appelles IIFE (Immediately Invoked Function Expression)
 (function shuffle(){
     $cards.forEach(card=>{
         let randomNumber = Math.floor(Math.random() * 20)
