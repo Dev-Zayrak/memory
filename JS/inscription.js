@@ -12,10 +12,9 @@ $name.addEventListener("input",function nameCheck() {
     availableName = true
     //controle si nom déjà pris
     for(const key in convertData){
-        if($name.value == convertData[key].name){
+        if($name.value == convertData[key].name || $name.value == 'admin'){
             $errorName.textContent="nom déjà pris"
             availableName = false;
-            console.log("log1 ",availableName);
             return
         }else $errorName.textContent=""
     }
@@ -164,5 +163,4 @@ function getUsers(key) {
     const convertUsers = JSON.parse(datasFromLocalstorage) || []
 
     return convertUsers
-    // return JSON.parse(localStorage.getItem(key)) || []
 }

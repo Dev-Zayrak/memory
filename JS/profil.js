@@ -25,7 +25,7 @@ const $noScore = document.getElementById("score1")
 if (scores.length == 0) $noScore.textContent = "Aucun score enregistrer."
 
 else{
-    // affichage top score
+    // affichage top score du joueur
     const $scores = []
     for(let i=1; i<6; i++){
         $scores.push(document.getElementById("score"+i))
@@ -38,247 +38,57 @@ else{
     }
 }
 
-// top 5
+// top score
 
-let top1name
-let top1score =2000
-let top2name
-let top2score =2000
-let top3name
-let top3score =2000
-let top4name
-let top4score =2000
-let top5name
-let top5score =2000
-
-// récupérer le top 5
-//top 1
-for (const key in convertUsers) {
-    if(convertUsers[key].score1 < top1score){
-        top1score = convertUsers[key].score1
-        top1name = convertUsers[key].name
-    }
-}
-
-//top 2
-for (const key in convertUsers) {
-    if(
-        convertUsers[key].score1 >= top1score &&
-        convertUsers[key].score1 < top2score &&
-        convertUsers[key].name != top1name
-        ){
-            top2score = convertUsers[key].score1
-            top2name = convertUsers[key].name
-    }
-    if(
-        convertUsers[key].score2 >= top1score &&
-        convertUsers[key].score2 < top2score &&
-        convertUsers[key].name != top1name
-        ){
-            top2score = convertUsers[key].score2
-            top2name = convertUsers[key].name
-    }
-    if(
-        convertUsers[key].score3 >= top1score &&
-        convertUsers[key].score3 < top2score &&
-        convertUsers[key].name != top1name
-        ){
-            top2score = convertUsers[key].score3
-            top2name = convertUsers[key].name
-    }
-    if(
-        convertUsers[key].score4 >= top1score &&
-        convertUsers[key].score4 < top2score &&
-        convertUsers[key].name != top1name
-        ){
-            top2score = convertUsers[key].score4
-            top2name = convertUsers[key].name
-    }
-    if(
-        convertUsers[key].score5 >= top1score &&
-        convertUsers[key].score5 < top2score &&
-        convertUsers[key].name != top1name
-        ){
-            top2score = convertUsers[key].score5
-            top2name = convertUsers[key].name
-    }
-}
-
-//top 3
-for (const key in convertUsers) {
-    if(
-        convertUsers[key].score1 >= top2score &&
-        convertUsers[key].score1 < top3score &&
-        convertUsers[key].name != top1name &&
-        convertUsers[key].name != top2name
-        ){
-            top3score = convertUsers[key].score1
-            top3name = convertUsers[key].name
+let topScores = {"admin": 0}
+// regarder si le joueur a deja un score dans le hash
+//   si oui on compare les scores et on garde le plus bas
+//   si non on l'ajoutes dans le hash
+for(const key1 in convertUsers){
+    for(const key2 in topScores){
+        if(convertUsers[key1].scores[0] === undefined){
+            break
         }
-    if(
-        convertUsers[key].score2 >= top2score &&
-        convertUsers[key].score2 < top3score &&
-        convertUsers[key].name != top1name &&
-        convertUsers[key].name != top2name
-        ){
-            top3score = convertUsers[key].score2
-            top3name = convertUsers[key].name
-    }
-    if(
-        convertUsers[key].score3 >= top2score &&
-        convertUsers[key].score3 < top3score &&
-        convertUsers[key].name != top1name &&
-        convertUsers[key].name != top2name
-        ){
-            top3score = convertUsers[key].score3
-            top3name = convertUsers[key].name
-    }
-    if(
-        convertUsers[key].score4 >= top2score &&
-        convertUsers[key].score4 < top3score &&
-        convertUsers[key].name != top1name &&
-        convertUsers[key].name != top2name
-        ){
-            top3score = convertUsers[key].score4
-            top3name = convertUsers[key].name
-    }
-    if(
-        convertUsers[key].score5 >= top2score &&
-        convertUsers[key].score5 < top3score &&
-        convertUsers[key].name != top1name &&
-        convertUsers[key].name != top2name
-        ){
-            top3score = convertUsers[key].score5
-            top3name = convertUsers[key].name
+        if(convertUsers[key1].name === key2){
+            if(topScores[key2] > convertUsers[key1].scores[0]){
+                topScores[key2] = convertUsers[key1].scores[0]
+            }
+        }else{
+            topScores[convertUsers[key1].name] = convertUsers[key1].scores[0]
+        }
     }
 }
 
-//top 4
-for (const key in convertUsers) {
-    
-    if(
-        convertUsers[key].score1 >= top3score &&
-        convertUsers[key].score1 < top4score &&
-        convertUsers[key].name != top1name &&
-        convertUsers[key].name != top2name &&
-        convertUsers[key].name != top3name
-        ){
-            top4score = convertUsers[key].score1
-            top4name = convertUsers[key].name
-    }
-    if(
-        convertUsers[key].score2 >= top3score &&
-        convertUsers[key].score2 < top4score &&
-        convertUsers[key].name != top1name &&
-        convertUsers[key].name != top2name &&
-        convertUsers[key].name != top3name
-        ){
-            top4score = convertUsers[key].score2
-            top4name = convertUsers[key].name
-    }
-    if(
-        convertUsers[key].score3 >= top3score &&
-        convertUsers[key].score3 < top4score &&
-        convertUsers[key].name != top1name &&
-        convertUsers[key].name != top2name &&
-        convertUsers[key].name != top3name
-        ){
-            top4score = convertUsers[key].score3
-            top4name = convertUsers[key].name
-    }
-    if(
-        convertUsers[key].score4 >= top3score &&
-        convertUsers[key].score4 < top4score &&
-        convertUsers[key].name != top1name &&
-        convertUsers[key].name != top2name &&
-        convertUsers[key].name != top3name
-        ){
-            top4score = convertUsers[key].score4
-            top4name = convertUsers[key].name
-    }
-    if(
-        convertUsers[key].score5 >= top3score &&
-        convertUsers[key].score5 < top4score &&
-        convertUsers[key].name != top1name &&
-        convertUsers[key].name != top2name &&
-        convertUsers[key].name != top3name
-        ){
-            top4score = convertUsers[key].score5
-            top4name = convertUsers[key].name
-    }
+delete topScores['admin']
+
+// on trie le hash par ordre croissant des valeurs
+const entries = Object.entries(topScores);
+entries.sort(([, valueA], [, valueB]) => valueA - valueB);
+const sortTopScores = Object.fromEntries(entries);
+
+// on gardes uniquement les 5 premieres pairs (cle.valeur) et on supprimes les autres
+const finaltopScores = {}
+let count = 0
+for(const key in sortTopScores){
+    if(count>4) break
+    finaltopScores[key] = sortTopScores[key]
+    count++
 }
 
-//top 5
-for (const key in convertUsers) {
-    if(
-        convertUsers[key].score1 >= top4score &&
-        convertUsers[key].score1 < top5score &&
-        convertUsers[key].name != top1name &&
-        convertUsers[key].name != top2name &&
-        convertUsers[key].name != top3name &&
-        convertUsers[key].name != top4name
-        ){
-            top5score = convertUsers[key].score1
-            top5name = convertUsers[key].name
-    }
-    if(convertUsers[key].score2 >= top4score &&
-        convertUsers[key].score2 < top5score &&
-        convertUsers[key].name != top1name &&
-        convertUsers[key].name != top2name &&
-        convertUsers[key].name != top3name &&
-        convertUsers[key].name != top4name
-        ){
-            top5score = convertUsers[key].score2
-            top5name = convertUsers[key].name
-    }
-    if(convertUsers[key].score3 >= top4score &&
-        convertUsers[key].score3 < top5score &&
-        convertUsers[key].name != top1name &&
-        convertUsers[key].name != top2name &&
-        convertUsers[key].name != top3name &&
-        convertUsers[key].name != top4name
-        ){
-            top5score = convertUsers[key].score3
-            top5name = convertUsers[key].name
-    }
-    if(convertUsers[key].score4 >= top4score &&
-        convertUsers[key].score4 < top5score &&
-        convertUsers[key].name != top1name &&
-        convertUsers[key].name != top2name &&
-        convertUsers[key].name != top3name &&
-        convertUsers[key].name != top4name
-        ){
-            top5score = convertUsers[key].score4
-            top5name = convertUsers[key].name
-    }
-    if(convertUsers[key].score5 >= top4score &&
-        convertUsers[key].score5 < top5score &&
-        convertUsers[key].name != top1name &&
-        convertUsers[key].name != top2name &&
-        convertUsers[key].name != top3name &&
-        convertUsers[key].name != top4name
-        ){
-            top5score = convertUsers[key].score5
-            top5name = convertUsers[key].name
-    }
-}
-
-
-// afficher top 5
-const $top0 = document.getElementById("top0")
-const $top1 = document.getElementById("top1")
-const $top2 = document.getElementById("top2")
-const $top3 = document.getElementById("top3")
-const $top4 = document.getElementById("top4")
-const $top5 = document.getElementById("top5")
-
-
-if (top1score > 1000) $top0.textContent = "Aucun score enregistrer."
+// on boucle pour afficher les noms des joueurs et leurs scores
+const $noTopScore = document.getElementById("top1")
+if (Object.keys(finaltopScores).length === undefined) $noTopScore.textContent = "Aucun score enregistrer."
 else{
-    $top1.textContent = "Top 1 "+ top1name+ " : "+ top1score + " coups"
+    const $allScores = []
+    for(let i=1; i<6; i++){
+        $allScores.push(document.getElementById("top"+i))
+    }
 
-    if(top2score < 1000) $top2.textContent = "Top 2 "+ top2name+ " : "+ top2score + " coups"
-    if(top3score < 1000) $top3.textContent = "Top 3 "+ top3name+ " : "+ top3score + " coups"
-    if(top4score < 1000) $top4.textContent = "Top 4 "+ top4name+ " : "+ top4score + " coups"
-    if(top5score < 1000) $top5.textContent = "Top 5 "+ top5name+ " : "+ top5score + " coups"
+    let y = 0;
+    let z = 1;
+    for(const key in finaltopScores){
+        $allScores[y].textContent = "Top " + z + " : " + key + " - " + finaltopScores[key]
+        y++
+        z++
+    }
 }
