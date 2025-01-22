@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/userAccess.css">
+    <title>Memory - Accès utilisateur</title>
+</head>
+<body>
+    
+    <h1>Eni - <strong> Memory </strong>- Accès utilisateur</h1>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form>
+                <h2>Inscrivez-vous</h2>
+                <input type="text" placeholder="Nom">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <button>Création du compte</button>
+            </form>
+        </div>
+            <div class="form-container sign-in">
+                <form>
+                    <h2>Connectez-vous</h2>
+                    <input type="email" placeholder="Email">
+                    <input type="password" placeholder="Password">
+                    <a href="#">Mot de passe oublié ?</a>
+                    <button>Connection</button>
+                </form>
+            </div>
+            <div class="toggle-container">
+                <div class="toggle">
+                    <div class="toggle-panel toggle-left">
+                        <h2>Bon Retour !</h2>
+                        <p>Connectez-vous pour utiliser toutes les fonctionnalitées de notre site !</p>
+                        <button class="hidden" id="login">Connection</button>
+                    </div>
+                    <div class="toggle-panel toggle-right">
+                        <h2>Bienvenue !</h2>
+                        <p>Inscrivez-vous pour utiliser toutes les fonctionnalitées de notre site !</p>
+                        <button class="hidden" id="register">Création du compte</button>
+                    </div>
+                </div>
+            </div>
+    </div>
+</body>
+</html>
