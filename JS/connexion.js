@@ -1,3 +1,4 @@
+console.log("script connexion")
 //RECUPERATION DONNÉE LOCALSTORAGE
 const datasLocalstorage = localStorage.getItem("users")
 const convertData = JSON.parse(datasLocalstorage)
@@ -11,17 +12,17 @@ $validation.addEventListener("submit", (event) =>{
     let validMail
     let trueName=false;
     let truePwd=false;
-    let $errorName= document.getElementById("error-name")
-    let $errorPwd = document.getElementById("error-pwd")
+    let $errorName= document.getElementById("error-name-sign-in")
+    let $errorPwd = document.getElementById("error-pwd-sign-in")
     const profil1 = {};
 
     const $inputs = event.currentTarget.querySelectorAll("input")
     $inputs.forEach((input) => {
         switch(input.id){
-            case "name": 
+            case "name-sign-in": 
             userName = input.value
             break
-            case "pwd": userPwd = input.value
+            case "pwd-sign-in": userPwd = input.value
         }
     });
     //boucle et message NAME + recuperation vraie mdp si nom existe
@@ -40,21 +41,21 @@ $validation.addEventListener("submit", (event) =>{
 
     // si les données remplis sont bonnes
     if(trueName && truePwd){
-        let $successMsg = document.getElementById("success-msg")
+        let $successMsg = document.getElementById("success-msg-sign-in")
         $errorName.textContent=""
         $errorPwd.textContent=""
         $successMsg.textContent = "connexion validée !"
         setTimeout(() => {
         location.href="../HTML/profil.html"
-        }, 2000);
+        }, 3000);
     }
 
     //vider les messages d'erreurs lors d'une re-saisie
-    const $name = document.getElementById("name")
+    const $name = document.getElementById("name-sign-in")
     $name.addEventListener("input", function () {
         $errorName.textContent=""
     })
-    const $pwd = document.getElementById("pwd")
+    const $pwd = document.getElementById("pwd-sign-in")
     $pwd.addEventListener("input", function () {
         $errorPwd.textContent=""
     })

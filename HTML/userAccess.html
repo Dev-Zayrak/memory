@@ -8,49 +8,70 @@
     <title>Memory - Accès utilisateur</title>
 </head>
 <body>
-    
+
     <h1>Eni - <strong> Memory </strong>- Accès utilisateur</h1>
     <nav>
         <a href="../index.html">Accueil</a>
-        <a href="HTML/userAccess.html">Se connecter</a>
-        <a href="HTML/userAccess.html?form=register">S'inscrire</a>
+        <a href="./userAccess.html">Se connecter</a>
+        <a href="./userAccess.html?form=register">S'inscrire</a>
     </nav>
 
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form>
+            <form id="inscriptionForm">
                 <h2>Inscrivez-vous</h2>
-                <input type="text" placeholder="Nom">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <button>Création du compte</button>
+                <input type="text" id="name-sign-up" placeholder="Nom" required>
+                <div class="message-error" id="error-name-sign-up"></div>
+
+                <input type="email" id="mail-sign-up" placeholder="Email" required>
+                <div class="message-error" id="error-mail-sign-up"></div>
+
+                <input type="password" id="pwd-sign-up" placeholder="Mot de passe" required>
+                <div class="message-error" id="error-pwd-sign-up"></div>
+                <div id="pwd-power"></div>
+                <input type="password" id="check" placeholder="confirmez votre mot de passe" required>
+                <div class="message-error" id="error-Check"></div>
+
+                <div id="success-msg-sign-up"></div>
+                <div id="fail-msg-sign-up"></div>
+
+                <button type="submit">Création du compte</button>
             </form>
         </div>
-            <div class="form-container sign-in">
-                <form>
-                    <h2>Connectez-vous</h2>
-                    <input type="email" placeholder="Email">
-                    <input type="password" placeholder="Password">
-                    <a href="#">Mot de passe oublié ?</a>
-                    <button>Connection</button>
-                </form>
-            </div>
-            <div class="toggle-container">
-                <div class="toggle">
-                    <div class="toggle-panel toggle-left">
-                        <h2>Bon Retour !</h2>
-                        <p>Connectez-vous pour utiliser toutes les fonctionnalitées de notre site !</p>
-                        <button class="hidden" id="login">Connection</button>
-                    </div>
-                    <div class="toggle-panel toggle-right">
-                        <h2>Bienvenue !</h2>
-                        <p>Inscrivez-vous pour utiliser toutes les fonctionnalitées de notre site !</p>
-                        <button class="hidden" id="register">Création du compte</button>
-                    </div>
+
+        <div class="form-container sign-in">
+            <form id="connexionForm">
+                <h2>Connectez-vous</h2>
+                <input type="text" id="name-sign-in" placeholder="Nom d'utilisateur" required>
+                <div class="message-error" id="error-name-sign-in"></div>
+
+                <input type="password" id="pwd-sign-in" placeholder="Mot de passe" required>
+                <div class="message-error" id="error-pwd-sign-in"></div>
+                <div id="success-msg-sign-in"></div>
+                <a href="#">Mot de passe oublié ?</a>
+
+                <button type="submit">Connexion</button>
+            </form>
+        </div>
+
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h2>Bon Retour !</h2>
+                    <p>Connectez-vous pour utiliser toutes les fonctionnalitées de notre site !</p>
+                    <button class="hidden" id="login">Connection</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h2>Bienvenue !</h2>
+                    <p>Inscrivez-vous pour utiliser toutes les fonctionnalitées de notre site !</p>
+                    <button class="hidden" id="register">Création du compte</button>
                 </div>
             </div>
+        </div>
     </div>
 
+    <script type="module" src="../JS/inscription.js"></script>
+    <script type="module" src="../JS/connexion.js"></script>
     <script type="module" src="../JS/userAccess.js"></script>
 </body>
 </html>

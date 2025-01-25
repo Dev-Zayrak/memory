@@ -3,8 +3,8 @@ const datasLocalstorage = localStorage.getItem("users")
 const convertData = JSON.parse(datasLocalstorage)
 
 // NAME
-let $name = document.getElementById("name")
-let $errorName = document.getElementById("error-name")
+let $name = document.getElementById("name-sign-up")
+let $errorName = document.getElementById("error-name-sign-up")
 const regexName = /(^[0-9a-zA-Z-]+$)/
 let availableName
 let regexNameBoolean
@@ -30,8 +30,8 @@ $name.addEventListener("input",function nameCheck() {
 })
 
 // MAIL
-let $mail = document.getElementById("mail")
-let $errorMail = document.getElementById("error-mail")
+let $mail = document.getElementById("mail-sign-up")
+let $errorMail = document.getElementById("error-mail-sign-up")
 const regexMail = /(?=.*[a-zA-Z]).{2,}@(?=.*[a-zA-Z]).{2,}\.(?=.*[a-zA-Z]).{2,}/
 let availableMail
 let regexMailBoolean
@@ -57,8 +57,8 @@ $mail.addEventListener("input", function mailCheck() {
 })
 
 // PASSWORD
-let $password = document.getElementById("pwd")
-let $errorPwd = document.getElementById("error-pwd")
+let $password = document.getElementById("pwd-sign-up")
+let $errorPwd = document.getElementById("error-pwd-sign-up")
 let regexPwdBoolean
 let samePwd
 const regexPwd = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{6,}/
@@ -119,11 +119,11 @@ $inscriptionForm.addEventListener("submit", (event) =>{
         const $inputs = event.currentTarget.querySelectorAll("input")
         $inputs.forEach((input)=>{
             switch (input.id) {
-                case "name":  user.name = input.value
+                case "name-sign-up":  user.name = input.value
                 break
-                case "mail": user.mail = input.value
+                case "mail-sign-up": user.mail = input.value
                 break
-                case "pwd": 
+                case "pwd-sign-up": 
                 user.pwd = input.value
                 user.scores = []
             }
@@ -131,15 +131,15 @@ $inscriptionForm.addEventListener("submit", (event) =>{
         saveUser(Key_LocalStorage, user)
 
         event.preventDefault();
-        let $successMsg = document.getElementById("success-msg")
+        let $successMsg = document.getElementById("success-msg-sign-up")
         $successMsg.textContent = "Inscription validée !"
         setTimeout(() => {
-        location.href="connexion.html"
-        }, 2000);
+        location.href="userAccess.html"
+        }, 3000);
 
     }else{
         event.preventDefault();
-        let $failMsg = document.getElementById("fail-msg")
+        let $failMsg = document.getElementById("fail-msg-sign-up")
         $failMsg.textContent = "Formulaire mal rempli"
         setTimeout(() => {
             $failMsg.textContent =""
