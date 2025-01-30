@@ -2,13 +2,11 @@
     box-sizing: border-box;
 }
 
-
 body{
     display: flex;
     align-items: center;
     flex-direction: column;
     height: 100vh;
-    
 }
 
 .container{
@@ -194,10 +192,31 @@ h2{
     line-height: 1;
 }
 
+#pwd-power{
+    color: green;
+}
+
+#success-msg-sign-up, #success-msg-sign-in{
+    color: green;
+    font-weight: bold;
+    font-size: 2.5vw;
+}
+#fail-msg-sign-up, #fail-msg-sign-in{
+    color: red;
+    font-weight: bold;
+    font-size: 2.5vw;
+}
+
 
 @media (min-width: 577px) and (max-width: 1024px){
     .container{
         min-height: 60vh;
+    }
+    #success-msg-sign-up, #success-msg-sign-in{
+        font-size: 2vw;
+    }
+    #fail-msg-sign-up, #fail-msg-sign-in{
+        font-size: 2vw;
     }
 }
 
@@ -225,5 +244,11 @@ h2{
     }
     .container.active .toggle-container{
         border-radius: 0 3vw 3vw 0;
+    }
+    #success-msg-sign-up, #success-msg-sign-in{
+        font-size: 1vw;
+    }
+    #fail-msg-sign-up, #fail-msg-sign-in{
+        font-size: 1vw;
     }
 }

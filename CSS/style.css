@@ -10,12 +10,10 @@ h1{
     color: whitesmoke;
     margin-top: 0vh;
     margin-bottom: 3vh;
-    width: 99%;
 }
 nav{
     display: flex;
     justify-content: center;
-    width: 99%;
 }
 nav a {
     text-decoration: none;

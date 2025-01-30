@@ -11,8 +11,9 @@ $validation.addEventListener("submit", (event) =>{
     let validMail
     let trueName=false;
     let truePwd=false;
-    let $errorName= document.getElementById("error-name-sign-in")
-    let $errorPwd = document.getElementById("error-pwd-sign-in")
+    let $failConnexion = document.getElementById("fail-msg-sign-in")
+    // let $errorName= document.getElementById("error-name-sign-in")
+    // let $errorPwd = document.getElementById("error-pwd-sign-in")
     const profil1 = {};
 
     const $inputs = event.currentTarget.querySelectorAll("input")
@@ -32,11 +33,9 @@ $validation.addEventListener("submit", (event) =>{
                     trueName=true;
                 }
     }
-    if(!trueName) $errorName.textContent="Nom inconnu"
 
-    //validation + message PWD
-    if(userPwd === validPwd) truePwd=true;
-    else $errorPwd.textContent="Mot de passe inconnu"
+    if(trueName && userPwd === validPwd) truePwd=true
+    else $failConnexion.textContent="Nom ou / et mot de passe inconnu"
 
     // si les données remplis sont bonnes
     if(trueName && truePwd){
