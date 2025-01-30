@@ -30,6 +30,13 @@ nav a:hover{
     background-color: purple;
 }
 
+#footer{
+    display: flex;
+    justify-content: center;
+    color: whitesmoke;
+    font-size: 3vw;
+}
+
 @media (min-width: 577px) and (max-width: 1024px){
     h1{
         margin-bottom: 1vh;
@@ -50,4 +57,7 @@ nav a:hover{
     nav a {
         font-size: 1.5vw;
     }
-} 
+    #footer{
+        font-size: 1vw;
+    }
+}

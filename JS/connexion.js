@@ -1,4 +1,3 @@
-console.log("script connexion")
 //RECUPERATION DONNÉE LOCALSTORAGE
 const datasLocalstorage = localStorage.getItem("users")
 const convertData = JSON.parse(datasLocalstorage)
