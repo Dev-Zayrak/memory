@@ -40,8 +40,8 @@ $validation.addEventListener("submit", (event) =>{
     // si les données remplis sont bonnes
     if(trueName && truePwd){
         let $successMsg = document.getElementById("success-msg-sign-in")
-        $errorName.textContent=""
-        $errorPwd.textContent=""
+        // $errorName.textContent=""
+        // $errorPwd.textContent=""
         $successMsg.textContent = "connexion validée !"
         setTimeout(() => {
         location.href="../HTML/profil.html"
@@ -51,19 +51,15 @@ $validation.addEventListener("submit", (event) =>{
     //vider les messages d'erreurs lors d'une re-saisie
     const $name = document.getElementById("name-sign-in")
     $name.addEventListener("input", function () {
-        $errorName.textContent=""
+        $failConnexion.textContent=""
     })
     const $pwd = document.getElementById("pwd-sign-in")
     $pwd.addEventListener("input", function () {
-        $errorPwd.textContent=""
+        $failConnexion.textContent=""
     })
 
     //ENVOYER NOM + MAIL DANS LOCALSTORAGE POUR ETRE RECUP DANS LE PROFIL APRES
-
-
     profil1.name = userName
     profil1.mail = validMail
-    console.log("profil1name :",profil1.name);
-    console.log("profil1mail :",profil1.mail);
     localStorage.setItem("joueur", JSON.stringify(profil1))
 })
